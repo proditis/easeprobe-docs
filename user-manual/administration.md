@@ -1,23 +1,18 @@
-# 5. Administration
+# Administration
 
-### 5.1 PID file
+EaseProbe can be configured by supplying a YAML file or URL to fetch configuration settings from.
 
-The EaseProbe would create a PID file (default `$CWD/easeprobe.pid`) when it starts. it can be configured by:
+By default, EaseProbe will look for its `config.yaml` on the current folder. This behavior can be changed by supplying the `-f` parameter.
 
+```shell
+easeprobe -f path/to/config.yaml
+easeprobe -f https://example.com/config
 ```
-settings:
-pid: /var/run/easeprobe.pid
-```
 
-* If the file already exists, EaseProbe would overwrite it.
-* If the file cannot be written, EaseProbe would exit with an error.
+The following environment variables can be used to fine-tune the request to the configuration file
 
-If you want to disable the PID file, you can configure the pid file to "".
-
-```
-settings:
-pid: "" # EaseProbe won't create a PID file
-```
+* `HTTP_AUTHORIZATION`
+* `HTTP_TIMEOUT`
 
 ### 5.2 Log file Rotation
 
