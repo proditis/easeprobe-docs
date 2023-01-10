@@ -1,32 +1,25 @@
-# Quick Start
+# Getting Started
 
-Read the User Manual for detailed instructions on how to configure all EaseProbe parameters.
+You can get started with EaseProbe, by using any of the available methods:
 
-Create a configuration file (eg. `$CWD/config.yaml`) using the following simple configuration example&#x20;
+* Download a release for your platform from https://github.com/megaease/easeprobe/releases
+* Use the available EaseProbe docker image `docker run -it megaease/easeprobe`
+* Build `easeprobe` from sources
 
-```
-http: # http probe
-  - name: EaseProbe Github
-    url: https://github.com/megaease/easeprobe
-notify:
-  log:
-    - name: log file # local log file
-      file: /var/log/easeprobe.log
-settings:
-  probe:
-    timeout: 30s # the timeout for all probes
-    interval: 1m # probe every minute for all probes
-```
+## Using a release
 
-You can check the EaseProbe JSON schema section to use a JSON Scheme file to make your life easier when you edit the configuration file.
+Visit our [Github Release pages](https://github.com/megaease/easeprobe/releases) and download the latest release for your platform.&#x20;
 
-A detailed configuration template can be found at [./resources/config.yaml](https://raw.githubusercontent.com/megaease/easeprobe/main/resources/config.yaml), which includes the complete list of configuration parameters.
+## Using Docker image
 
 
+
+## Build from sources
+
+Compiler `Go 1.18+` (Generics Programming Support), checking the [Go Installation](https://go.dev/doc/install) to see how to install Go on your platform.
+
+Use `make` to build and produce the `easeprobe` binary file. The executable is produced under the `build/bin` directory.
 
 ```shell
-$ build/bin/easeprobe -f config.yaml
+$ make
 ```
-
-* `-f` configuration file or URL or path for multiple files which will be auto merged into one. Can also be achieved by setting the environment variable `PROBE_CONFIG`
-* `-d` dry run. Can also be achieved by setting the environment variable `PROBE_DRY`
