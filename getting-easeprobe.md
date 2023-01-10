@@ -1,4 +1,4 @@
-# Getting Started
+# Getting EaseProbe
 
 You can get started with EaseProbe, by using any of the available methods:
 
